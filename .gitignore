@@ -1,0 +1,12 @@
+#Files to Ignore
+Python/.ipynb_checkpoints/
+Python/__pycache__/
+Models/SimulatedPretrainedModelTuner/
+Models/SimulatedAndExperimentalModelTuner/
+Models/ExperimentalDataModelTuner/
+Models/ExperimentalDataTransferLearningModelTuner/
+TrainingData/RTRExperimentalTrainingSet177Examples.csv
+TrainingData/trainRTRExperimental.csv
+Models/ExperimentalDataModelTuner/
+Models/ExperimentalDataTransferLearningModelTuner/
+GitHub.txt
