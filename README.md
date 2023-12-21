@@ -14,7 +14,6 @@ S. J. Ward, and S. M. Weiss, “,”  X (X), (2024).
 ##### 2.2 Simluted Data
 ### 3. 
 ##### 3.1 Settings
-##### 3.2 Advanced Settings
 ### 5. Troubleshooting
 ### 6. FAQ
 ***
