@@ -12,9 +12,20 @@ Ward, S. J., & Weiss, S. M. (2023). Reduction in sensor response time using long
 ## Table of Contents
 ### 1. Motivation
 ### 2. Experimental Data
-### 3. Porous Silicon
-### 3. Models
-##### 3.1 Settings
+#### 2.1 Porous Silicon
+#### 2.2 Data Collection
+#### 2.3 Data Visualization
+##### 2.3.1 Full Dataset
+##### 2.3.2 Equilibrium Sensor Response vs Protein Solution Concentration
+#### 2.4 Model Hyperparameter Tuning
+#### 2.5 Model Training
+#### 2.6 Model Evaluation
+##### 2.6.1 Model Architecture
+##### 2.6.2 Representative Examples of Model Predictions
+##### 2.6.3 Histogram Showing Prediction Response Time Improvement
+##### 2.6.4 Box and Whisker Plot Showing Prediction Response Time Improvement
+##### 2.6.5 Comparison of Ensemble Sizes
+##### 2.5.6 All Model Predictions
 ### 5. Troubleshooting
 ### 6. FAQ
 ***
@@ -53,14 +64,22 @@ The same plot but only showing a representative sample of protein concentrations
 
 <img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/RepresentativeExperimentalTrainingDataset.png" width = "100" />
 
-#### 2.1.2 Equilibrium Sensor Response vs Protein Solution Concentration
+#### 2.3.2 Equilibrium Sensor Response vs Protein Solution Concentration
 The adsorption isotherm, which refers to the variation of equilibrium sensor response with protein concentration, is generated in section 1 of this [notebook](Python/FiguresData.ipynb#FiguresDataSection1)
 
 <img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/SemilogAverageEquilibriumResponse.png" width = "100" />
 
 ***
-## 2.4 Model Evaluation
-### 2.4.1 Model Architecture
+## 2.4 Model Hyperparameter Tuning
+
+The architecture resulting in minimum loss on the validation dataset was explored through hyperparameter tuning with Keras tuner in this [notebook](Python/ExperimentalDataModelTuner.ipynb#ExperimentalDataModelTunerTop)
+
+## 2.5 Model Training
+
+An ensemble of 15 base learners were trained using the optimal hyperparemeters in this [notebook](Python/ExperimentalDataEnsembleModels.ipynb#ExperimentalDataEnsembleModelsTop)
+
+## 2.6 Model Evaluation
+### 2.6.1 Model Architecture
 LSTM networks are well suited for the rapid prediction of equilibrium sensor response due to their ability to learn features without requiring manual feature selection, to learn to distinguish signal from noise, and to learn long and short term dependencies in sequential data, all of which promote generalizability. 
 
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/LSTM.png" width = "700" />
@@ -72,17 +91,40 @@ The data was first randomly shuffled and split into train, validation and test s
 
 The base learner architecture, informed by limited hyperparameter tuning using the validation set, was the following: 50 input neurons, 1 hidden layer with 500 neurons, and 2 output neurons. The maximum and minimum sensor response values across all time steps and all examples in the training set were used to normalize the train, validation and test sets, to avoid data leakage.
 ***
-### 2.4.2 
+### 2.6.2 Representative Examples of Model Predictions
 
+Six examples of predictions made on experimental sensor response time series are shown in section 1 of this [notebook](Python/FiguresExperimentalDataModel.ipynb#FiguresExperimentalDataModelSection1) individually and in a panel in section 2 of the same [notebook](Python/FiguresExperimentalDataModel.ipynb#FiguresExperimentalDataModelSection2).
 
+<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/Figures/PanelExperimentalEnsemblePredictionIdealResponses.png" width = "100" />
 
-- 
 ***
+### 2.6.3 Histogram Showing Prediction Response Time Improvement 
+
+A histogram comparing the distributions of response times for the unprocessed experimental data and model predictions, including normalized variance which is indicative of signal to noise ratio (S/N) is shown in section 3 of this [notebook](Python/FiguresExperimentalDataModel.ipynb#FiguresExperimentalDataModelSection3).
+
+<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/Figures/PredictedExperimentalt90HistogramNormVariance.png" width = "100" />
+
+***
+### 2.6.4 Box and Whisker Plot Showing Prediction Response Time Improvement 
+
+A box and whisker plot comparing the distributions of response times for the unprocessed experimental data and model predictions is shown in section 4 of this [notebook](Python/FiguresExperimentalDataModel.ipynb#FiguresExperimentalDataModelSection4).
+
+<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/Figures/BoxandWhiskerPlotExperimentalPredictedt90Ratio.png" width = "100" />
+
+***
+### 2.6.5 Comparison of Ensemble Sizes 
+
+The mean and median improvement in response time for different numbers of base learners (1-30) is shown in section 5 of this [notebook](Python/FiguresExperimentalDataModel.ipynb#FiguresExperimentalDataModelSection5).
+
+<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/Figures/EnsembleSizeResponseTimeImprovement.png" width = "100" />
+
+### 2.5.6 All Model Predictions 
+
+Predictions made on all experimental sensor response time series in the test set are shown in section 6 of this [notebook](Python/FiguresExperimentalDataModel.ipynb#FiguresExperimentalDataModelSection6).
 
 ## 6. FAQs
 
 ***
 ## 7. Acknowledgements
-
 
 ***
