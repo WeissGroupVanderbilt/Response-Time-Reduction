@@ -1,9 +1,8 @@
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/OverviewFigure.png" width = "600" />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/OverviewFigureCrop.png" width = "500" />
 # Sensor Response Time Reduction
 
-
 ***
-For further details, see the following publications:
+For full details, see the following publications:
 
 Ward, S. J., M. Baljevic, & Weiss, S. M. (2024). “Sensor Response-Time Reduction using Long-Short Term Memory Network Forecasting,”  _Manuscript in preparation_.
 
@@ -25,11 +24,17 @@ The response time of a biosensor is a crucial metric in safety-critical applicat
 
 While optimization of system and sensor design can promote molecules reaching the sensing element faster, a simpler and complementary approach for response time reduction that is widely applicable across all sensor platforms is to use time-series forecasting to predict the ultimate steady-state sensor response.
 
-In this work, we show that ensembles of long short-term memory (LSTM) networks can accurately predict equilibrium biosensor response from a small quantity of initial time-dependent biosensor measurements, allowing for significant reduction in response time by a mean and median factor of improvement of 18.6 and 5.1, respectively. The ensemble of models also provides simultaneous estimation of uncertainty, which is vital to provide confidence in the predictions and subsequent safety-related decisions that are made.
+In this work, we show that ensembles of long short-term memory (LSTM) networks can accurately predict equilibrium biosensor response from a small quantity of initial time-dependent biosensor measurements, allowing for __significant reduction in response time by a mean and median factor of improvement of 18.6 and 5.1, respectively__. The ensemble of models also provides simultaneous estimation of uncertainty, which is vital to provide confidence in the predictions and subsequent safety-related decisions that are made.
 
 This approach is demonstrated on real-time experimental data collected by exposing porous silicon biosensors to buffered protein solutions using a multi-channel fluidic cell that enables the automated measurement of 100 porous silicon biosensors in parallel. The dramatic improvement in sensor response time achieved using LSTM network ensembles and associated uncertainty quantification opens the door to trustworthy and faster responding biosensors, enabling more rapid medical diagnostics for improved patient outcomes and healthcare access, as well as quicker identification of toxins in food and the environment.
 ***
 ## 2. Experimental Data
+### 2.1 Porous Silicon
+Porous Silicon (PSi) is silicon with nanostructured pores, which have been electrochemically etched using hydrofluoric acid. Below are shown some images on the scale of a few nanometres taken using an electron microscope, and and illustration of how molecules are captured and detected optically in the pores.
+
+![](https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/PorousSilicon.gif)
+
+### 2.2 Data Collection
 Porous silicon sensors were fabricated, secured in a multi-channel fluidic cell, and real time optical reflectance measurements were carried out for each sensor in turn as the protein bovine serum albumin (BSA) in buffer solutions (HEPES), at concentrations of 40, 20, 10, 4, 2, 1, 0.4, 0.2, 0.1, 0.04, 0.02, 0.002 mg/ml, and a control solution consisting of 100% buffer, were dropped onto the sensors.
 
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/BSA.png" width = "400" /> 
@@ -38,11 +43,24 @@ Collection of a sufficiently large dataset was enabled by using an automated rea
 
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/HighThroughputMeasurementSetup.png" width = "700" />
 ***
-## 3. Porous Silicon
+### 2.3 Data Visualization
+#### 2.3.1 Full Dataset
+The full experimental dataset, consisting of 387 examples of time series sensor response data, is generated in section 2 of this [notebook](Python/FiguresData.ipynb#FiguresDataSection2)
 
-![](https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/PorousSilicon.gif)
+<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/ExperimentalTrainingDataset.png" width = "100" />
 
-## 4. Models
+The same plot but only showing a representative sample of protein concentrations can be found in section 3 of the same [notebook](Python/FiguresData.ipynb#FiguresDataSection2)
+
+<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/RepresentativeExperimentalTrainingDataset.png" width = "100" />
+
+#### 2.1.2 Equilibrium Sensor Response vs Protein Solution Concentration
+The adsorption isotherm, which refers to the variation of equilibrium sensor response with protein concentration, is generated in section 1 of this [notebook](Python/FiguresData.ipynb#FiguresDataSection1)
+
+<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/SemilogAverageEquilibriumResponse.png" width = "100" />
+
+***
+## 2.4 Model Evaluation
+### 2.4.1 Model Architecture
 LSTM networks are well suited for the rapid prediction of equilibrium sensor response due to their ability to learn features without requiring manual feature selection, to learn to distinguish signal from noise, and to learn long and short term dependencies in sequential data, all of which promote generalizability. 
 
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/LSTM.png" width = "700" />
@@ -54,7 +72,7 @@ The data was first randomly shuffled and split into train, validation and test s
 
 The base learner architecture, informed by limited hyperparameter tuning using the validation set, was the following: 50 input neurons, 1 hidden layer with 500 neurons, and 2 output neurons. The maximum and minimum sensor response values across all time steps and all examples in the training set were used to normalize the train, validation and test sets, to avoid data leakage.
 ***
-### 3.1 Settings
+### 2.4.2 
 
 
 
