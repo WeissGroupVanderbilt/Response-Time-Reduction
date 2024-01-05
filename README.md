@@ -1,5 +1,4 @@
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/OverviewFigure.png" width = "750" />
-
 # Sensor Response Time Reduction
 
 
