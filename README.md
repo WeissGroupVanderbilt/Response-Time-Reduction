@@ -31,9 +31,9 @@ In this work, we show that ensembles of long short-term memory (LSTM) networks c
 This approach is demonstrated on real-time experimental data collected by exposing porous silicon biosensors to buffered protein solutions using a multi-channel fluidic cell that enables the automated measurement of 100 porous silicon biosensors in parallel. The dramatic improvement in sensor response time achieved using LSTM network ensembles and associated uncertainty quantification opens the door to trustworthy and faster responding biosensors, enabling more rapid medical diagnostics for improved patient outcomes and healthcare access, as well as quicker identification of toxins in food and the environment.
 ***
 ## 2. Experimental Data
-Porous silicon sensors were fabricated, secured in a multi-channel fluidic cell, and real time optical reflectance measurements were carried out for each sensor in turn as the protein bovine serum albumin (BSA) in buffer solutions (HEPES) were dropped onto the sensors.
+Porous silicon sensors were fabricated, secured in a multi-channel fluidic cell, and real time optical reflectance measurements were carried out for each sensor in turn as the protein bovine serum albumin (BSA) in buffer solutions (HEPES), at concentrations of 40, 20, 10, 4, 2, 1, 0.4, 0.2, 0.1, 0.04, 0.02, 0.002 mg/ml, and a control solution consisting of 100% buffer, were dropped onto the sensors.
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/BSA.png" width = "400" />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/BSA.png" width = "400" />
 
 Collection of a sufficiently large dataset was enabled by using an automated real-time measurement setup in which the multi-channel fluidic cell was affixed to a stepper motor, which was controlled using python to cycle through the reflectance measurement of many sensors in sequence.
 
