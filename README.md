@@ -12,29 +12,34 @@ Ward, S. J., & Weiss, S. M. (2023). Reduction in sensor response time using long
 ## Table of Contents
 ### 1. Motivation
 ### 2. Experimental Data
-#### 2.1 Porous Silicon
-#### 2.2 Data Collection
-#### 2.3 Data Visualization
 
-&emsp;&emsp;2.3.1 Full Dataset
+&emsp; __2.1 Porous Silicon__
 
-&emsp;&emsp;2.3.2 Equilibrium Sensor Response vs Protein Solution Concentration
+&emsp; __2.2 Data Collection__
 
-#### 2.4 Model Hyperparameter Tuning
-#### 2.5 Model Training
-#### 2.6 Model Evaluation
+&emsp; __2.3 Data Visualization__
 
-&emsp;&emsp;2.6.1 Model Architecture
+&emsp;&emsp;&emsp;2.3.1 Full Dataset
 
-&emsp;&emsp;2.6.2 Representative Examples of Model Predictions
+&emsp;&emsp;&emsp;2.3.2 Equilibrium Sensor Response vs Protein Solution Concentration
 
-&emsp;&emsp;2.6.3 Histogram Showing Prediction Response Time Improvement
+&emsp; __2.4 Model Hyperparameter Tuning__
 
-&emsp;&emsp;2.6.4 Box and Whisker Plot Showing Prediction Response Time Improvement
+&emsp; __2.5 Model Training__
 
-&emsp;&emsp;2.6.5 Comparison of Ensemble Sizes
+&emsp; __2.6 Model Evaluation__
 
-&emsp;&emsp;2.5.6 All Model Predictions
+&emsp;&emsp;&emsp;2.6.1 Model Architecture
+
+&emsp;&emsp;&emsp;2.6.2 Representative Examples of Model Predictions
+
+&emsp;&emsp;&emsp;2.6.3 Histogram Showing Prediction Response Time Improvement
+
+&emsp;&emsp;&emsp;2.6.4 Box and Whisker Plot Showing Prediction Response Time Improvement
+
+&emsp;&emsp;&emsp;2.6.5 Comparison of Ensemble Sizes
+
+&emsp;&emsp;&emsp;2.5.6 All Model Predictions
 
 ### 3. Simulated Data
 ### 4. Alternative Models
@@ -70,16 +75,16 @@ Collection of a sufficiently large dataset was enabled by using an automated rea
 #### 2.3.1 Full Dataset
 The full experimental dataset, consisting of 387 examples of time series sensor response data, is generated in section 2 of this [notebook](Python/FiguresData.ipynb#FiguresDataSection2)
 
-<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/ExperimentalTrainingDataset.png" width = "100" />
+<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/ExperimentalTrainingDataset.png" width = "300" />
 
 The same plot but only showing a representative sample of protein concentrations can be found in section 3 of the same [notebook](Python/FiguresData.ipynb#FiguresDataSection2)
 
-<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/RepresentativeExperimentalTrainingDataset.png" width = "100" />
+<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/RepresentativeExperimentalTrainingDataset.png" width = "300" />
 
 #### 2.3.2 Equilibrium Sensor Response vs Protein Solution Concentration
 The adsorption isotherm, which refers to the variation of equilibrium sensor response with protein concentration, is generated in section 1 of this [notebook](Python/FiguresData.ipynb#FiguresDataSection1)
 
-<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/SemilogAverageEquilibriumResponse.png" width = "100" />
+<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/SemilogAverageEquilibriumResponse.png" width = "300" />
 
 ***
 ## 2.4 Model Hyperparameter Tuning
@@ -107,28 +112,28 @@ The base learner architecture, informed by limited hyperparameter tuning using t
 
 Six examples of predictions made on experimental sensor response time series are shown in section 1 of this [notebook](Python/FiguresExperimentalDataModel.ipynb#FiguresExperimentalDataModelSection1) individually and in a panel in section 2 of the same [notebook](Python/FiguresExperimentalDataModel.ipynb#FiguresExperimentalDataModelSection2).
 
-<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/Figures/PanelExperimentalEnsemblePredictionIdealResponses.png" width = "100" />
+<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/PanelExperimentalEnsemblePredictionIdealResponses.png" width = "400" />
 
 ***
 ### 2.6.3 Histogram Showing Prediction Response Time Improvement 
 
 A histogram comparing the distributions of response times for the unprocessed experimental data and model predictions, including normalized variance which is indicative of signal to noise ratio (S/N) is shown in section 3 of this [notebook](Python/FiguresExperimentalDataModel.ipynb#FiguresExperimentalDataModelSection3).
 
-<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/Figures/PredictedExperimentalt90HistogramNormVariance.png" width = "100" />
+<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/PredictedExperimentalt90HistogramNormVariance.png" width = "300" />
 
 ***
 ### 2.6.4 Box and Whisker Plot Showing Prediction Response Time Improvement 
 
 A box and whisker plot comparing the distributions of response times for the unprocessed experimental data and model predictions is shown in section 4 of this [notebook](Python/FiguresExperimentalDataModel.ipynb#FiguresExperimentalDataModelSection4).
 
-<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/Figures/BoxandWhiskerPlotExperimentalPredictedt90Ratio.png" width = "100" />
+<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/BoxandWhiskerPlotExperimentalPredictedt90Ratio.png" width = "300" />
 
 ***
 ### 2.6.5 Comparison of Ensemble Sizes 
 
 The mean and median improvement in response time for different numbers of base learners (1-30) is shown in section 5 of this [notebook](Python/FiguresExperimentalDataModel.ipynb#FiguresExperimentalDataModelSection5).
 
-<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/Figures/EnsembleSizeResponseTimeImprovement.png" width = "100" />
+<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/EnsembleSizeResponseTimeImprovement.png" width = "300" />
 
 ### 2.5.6 All Model Predictions 
 
