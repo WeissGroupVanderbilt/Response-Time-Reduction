@@ -56,7 +56,7 @@ Porous Silicon (PSi) is silicon with nanostructured pores, which have been elect
 ### 2.2 Data Collection
 Porous silicon sensors were fabricated, secured in a multi-channel fluidic cell, and real time optical reflectance measurements were carried out for each sensor in turn as the protein bovine serum albumin (BSA) in buffer solutions (HEPES), at concentrations of 40, 20, 10, 4, 2, 1, 0.4, 0.2, 0.1, 0.04, 0.02, 0.002 mg/ml, and a control solution consisting of 100% buffer, were dropped onto the sensors.
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src = "/Figures/BSA.png" width = "400" /> 
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src = "/Figures/BSA.png" width = "400" /> 
 
 Collection of a sufficiently large dataset was enabled by using an automated real-time measurement setup in which the multi-channel fluidic cell was affixed to a stepper motor, which was controlled using python to cycle through the reflectance measurement of many sensors in sequence.
 
