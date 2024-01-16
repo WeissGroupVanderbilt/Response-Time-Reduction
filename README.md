@@ -1,4 +1,4 @@
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/OverviewFigureCrop.png" width = "500" />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/OverviewFigureCrop.png" width = "500" />
 # Sensor Response Time Reduction
 
 ***
@@ -15,17 +15,23 @@ Ward, S. J., & Weiss, S. M. (2023). Reduction in sensor response time using long
 #### 2.1 Porous Silicon
 #### 2.2 Data Collection
 #### 2.3 Data Visualization
-###### 2.3.1 Full Dataset
-###### 2.3.2 Equilibrium Sensor Response vs Protein Solution Concentration
+&emsp;&emsp; 2.3.1 Full Dataset
+
+&emsp;&emsp; 2.3.2 Equilibrium Sensor Response vs Protein Solution Concentration
 #### 2.4 Model Hyperparameter Tuning
 #### 2.5 Model Training
 #### 2.6 Model Evaluation
-###### 2.6.1 Model Architecture
-###### 2.6.2 Representative Examples of Model Predictions
-###### 2.6.3 Histogram Showing Prediction Response Time Improvement
-###### 2.6.4 Box and Whisker Plot Showing Prediction Response Time Improvement
-###### 2.6.5 Comparison of Ensemble Sizes
-###### 2.5.6 All Model Predictions
+&emsp;&emsp; 2.6.1 Model Architecture
+
+&emsp;&emsp; 2.6.2 Representative Examples of Model Predictions
+
+&emsp;&emsp; 2.6.3 Histogram Showing Prediction Response Time Improvement
+
+&emsp;&emsp; 2.6.4 Box and Whisker Plot Showing Prediction Response Time Improvement
+
+&emsp;&emsp; 2.6.5 Comparison of Ensemble Sizes
+
+&emsp;&emsp; 2.5.6 All Model Predictions
 ### 3. Simulated Data
 ### 4. Alternative Models
 ### 5. Troubleshooting
