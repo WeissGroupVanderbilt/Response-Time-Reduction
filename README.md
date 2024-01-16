@@ -90,7 +90,7 @@ An ensemble of 15 base learners were trained using the optimal hyperparemeters i
 ### 2.6.1 Model Architecture
 LSTM networks are well suited for the rapid prediction of equilibrium sensor response due to their ability to learn features without requiring manual feature selection, to learn to distinguish signal from noise, and to learn long and short term dependencies in sequential data, all of which promote generalizability. 
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src = "/Figures/LSTM.png" width = "700" />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src = "/Figures/LSTM.png" width = "700" />
 
 Models were implemented in tensorflow using the keras API and built-in LSTM layers. Each LSTM layer was configured to return a sequence of 250 outputs, one for each input time step. The target output, used to compute the loss, is the final element of each input sequence, repeated in a vector with 250 elements. Each output prediction in the sequence is made having only seen data from the current and past timesteps, so will typically become increasingly more accurate as the sequence goes on and more data from the input sequence is seen by the model.
 
