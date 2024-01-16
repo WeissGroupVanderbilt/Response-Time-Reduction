@@ -90,7 +90,7 @@ An ensemble of 15 base learners were trained using the optimal hyperparemeters i
 ### 2.6.1 Model Architecture
 LSTM networks are well suited for the rapid prediction of equilibrium sensor response due to their ability to learn features without requiring manual feature selection, to learn to distinguish signal from noise, and to learn long and short term dependencies in sequential data, all of which promote generalizability. 
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/LSTM.png" width = "700" />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src = "/Figures/LSTM.png" width = "700" />
 
 Models were implemented in tensorflow using the keras API and built-in LSTM layers. Each LSTM layer was configured to return a sequence of 250 outputs, one for each input time step. The target output, used to compute the loss, is the final element of each input sequence, repeated in a vector with 250 elements. Each output prediction in the sequence is made having only seen data from the current and past timesteps, so will typically become increasingly more accurate as the sequence goes on and more data from the input sequence is seen by the model.
 
@@ -103,28 +103,28 @@ The base learner architecture, informed by limited hyperparameter tuning using t
 
 Six examples of predictions made on experimental sensor response time series are shown in section 1 of this [notebook](Python/FiguresExperimentalDataModel.ipynb#FiguresExperimentalDataModelSection1) individually and in a panel in section 2 of the same [notebook](Python/FiguresExperimentalDataModel.ipynb#FiguresExperimentalDataModelSection2).
 
-<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/PanelExperimentalEnsemblePredictionIdealResponses.png" width = "400" />
+<img src = "/Figures/PanelExperimentalEnsemblePredictionIdealResponses.png" width = "400" />
 
 ***
 ### 2.6.3 Histogram Showing Prediction Response Time Improvement 
 
 A histogram comparing the distributions of response times for the unprocessed experimental data and model predictions, including normalized variance which is indicative of signal to noise ratio (S/N) is shown in section 3 of this [notebook](Python/FiguresExperimentalDataModel.ipynb#FiguresExperimentalDataModelSection3).
 
-<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/PredictedExperimentalt90HistogramNormVariance.png" width = "300" />
+<img src = "/Figures/PredictedExperimentalt90HistogramNormVariance.png" width = "300" />
 
 ***
 ### 2.6.4 Box and Whisker Plot Showing Prediction Response Time Improvement 
 
 A box and whisker plot comparing the distributions of response times for the unprocessed experimental data and model predictions is shown in section 4 of this [notebook](Python/FiguresExperimentalDataModel.ipynb#FiguresExperimentalDataModelSection4).
 
-<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/BoxandWhiskerPlotExperimentalPredictedt90Ratio.png" width = "300" />
+<img src = "/Figures/BoxandWhiskerPlotExperimentalPredictedt90Ratio.png" width = "300" />
 
 ***
 ### 2.6.5 Comparison of Ensemble Sizes 
 
 The mean and median improvement in response time for different numbers of base learners (1-30) is shown in section 5 of this [notebook](Python/FiguresExperimentalDataModel.ipynb#FiguresExperimentalDataModelSection5).
 
-<img src = "https://github.com/SimonJWard/Response-Time-Reduction/blob/main/Figures/EnsembleSizeResponseTimeImprovement.png" width = "300" />
+<img src = "/Figures/EnsembleSizeResponseTimeImprovement.png" width = "300" />
 
 ### 2.5.6 All Model Predictions 
 
