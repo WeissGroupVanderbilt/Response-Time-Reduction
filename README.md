@@ -43,7 +43,7 @@ The response time of a biosensor is a crucial metric in safety-critical applicat
 
 While optimization of system and sensor design can promote molecules reaching the sensing element faster, a simpler and complementary approach for response time reduction that is widely applicable across all sensor platforms is to use time-series forecasting to predict the ultimate steady-state sensor response.
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src = "/Figures/StrategyAnimation.gif" width = "600" />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src = "/Figures/StrategyAnimation.gif" width = "600" />
 
 In this work, we show that ensembles of long short-term memory (LSTM) networks can accurately predict equilibrium biosensor response from a small quantity of initial time-dependent biosensor measurements, allowing for __significant reduction in response time by a mean and median factor of improvement of 18.6 and 5.1, respectively__. The ensemble of models also provides simultaneous estimation of uncertainty, which is vital to provide confidence in the predictions and subsequent safety-related decisions that are made.
 
