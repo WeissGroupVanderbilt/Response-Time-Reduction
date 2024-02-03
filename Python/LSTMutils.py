@@ -44,7 +44,7 @@ class ExperimentalData:
         df_data = df_full.iloc[:,1:]
         return concentrations, df_data
     
-    def NormalizeData(self,df_train,df_test,df_val=[]):
+    def NormalizeData(self,df_train,df_test,df_val=pd.DataFrame([])):
         min_value, max_value = df_train.min().min(), df_train.max().max()
         df_norm_train = (df_train - min_value)/(max_value - min_value)
         df_norm_test = (df_test - min_value)/(max_value - min_value)
